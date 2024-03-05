@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CMP1903_A1_2324
+namespace DieGame_Assessment_1
 {
-    internal class Program
+    // Program class
+    class Program
     {
+        // Main used to run program (uses as entry point)
         static void Main(string[] args)
         {
-            /*
-             * Create a Game object and call its methods.
-             * Create a Testing object to verify the output and operation of the other classes.
-             */
+            // Calls the Test method to start the program
+            Testing.Test();
+            // Stops the console from closing until a user input
+            Console.ReadKey();
         }
     }
 }

@@ -1,21 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DieGame_Assessment_1;
+using System;
+using System.Collections;
+using System.Diagnostics;
 
-namespace CMP1903_A1_2324
+namespace DieGame_Assessment_1
 {
-    internal class Game
+    // Game class
+    public class Game
     {
-        /*
-         * The Game class should create three die objects, roll them, sum and report the total of the three dice rolls.
-         *
-         * EXTRA: For extra requirements (these aren't required though), the dice rolls could be managed so that the
-         * rolls could be continous, and the totals and other statistics could be summarised for example.
-         */
+        // Stores the random object for number generation
+        private Random rng;
+        // Creates the three public die objects
+        public Die die1;
+        public Die die2;
+        public Die die3;
 
-        //Methods
+        // Game class constructor
+        public Game()
+        {
+            // Initliaze the random object
+            rng = new Random();
+            // Creates the three dice objects (die1, die2 and die3)
+            die1 = new Die(rng);
+            die2 = new Die(rng);
+            die3 = new Die(rng);
+        }
+
+        // Play method
+        public int Play()
+        {
+            // Creates a new integer variable to store the total value of the dice
+            int total = 0;
+            
+            // Rolls the three dice using the roll method and adds each value to the total
+            total += die1.Roll();
+            total += die2.Roll();
+            total += die3.Roll();
+            
+            // Displays the final outputs including both the individual dice rolls and the total
+            Console.WriteLine("Individual die rolls:");
+            Console.WriteLine("Die 1: " + die1.CurrentValue);
+            Console.WriteLine("Die 2: " + die2.CurrentValue);
+            Console.WriteLine("Die 3: " + die3.CurrentValue);
+            Console.WriteLine("Total of the three dice rolls: " + total);
+            
+            return total;
+        }
 
     }
 }
