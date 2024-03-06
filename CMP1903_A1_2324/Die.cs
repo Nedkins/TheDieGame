@@ -1,23 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CMP1903_A1_2324
 {
-    internal class Die
+    // Die Class
+    public class Die
     {
-        /*
-         * The Die class should contain one property to hold the current die value,
-         * and one method that rolls the die, returns and integer and takes no parameters.
-         */
+        // Stores the random object for number generation
+        private Random _rng;
 
-        //Property
+        // Creates a current value integer to store the value of a die
+        public int currentValue; 
 
+        // Die class constructor 
+        public Die(Random random)
+        {
+            // Initializes the random object. 
+            // Sets the current value of each die to 0
+            this._rng = random;
+            currentValue = 0;
+        }
 
-        //Method
-
-
+        // Method to roll each dice. This will then change the current value to a random number
+        public int Roll()
+        { 
+            currentValue = _rng.Next(1, 7); // Assigns current value to a random number between 1 and 6
+            return currentValue;
+        }
     }
 }
