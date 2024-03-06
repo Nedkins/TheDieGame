@@ -1,7 +1,4 @@
-﻿using DieGame_Assessment_1;
-using System;
-using System.Collections;
-using System.Diagnostics;
+﻿using System;
 
 namespace DieGame_Assessment_1
 {
@@ -9,21 +6,21 @@ namespace DieGame_Assessment_1
     public class Game
     {
         // Stores the random object for number generation
-        private Random rng;
+        private Random _rng;
         // Creates the three public die objects
         public Die die1;
         public Die die2;
         public Die die3;
-
+        
         // Game class constructor
         public Game()
         {
             // Initliaze the random object
-            rng = new Random();
+            _rng = new Random();
             // Creates the three dice objects (die1, die2 and die3)
-            die1 = new Die(rng);
-            die2 = new Die(rng);
-            die3 = new Die(rng);
+            die1 = new Die(_rng);
+            die2 = new Die(_rng);
+            die3 = new Die(_rng);
         }
 
         // Play method
@@ -37,15 +34,16 @@ namespace DieGame_Assessment_1
             total += die2.Roll();
             total += die3.Roll();
             
-            // Displays the final outputs including both the individual dice rolls and the total
-            Console.WriteLine("Individual die rolls:");
-            Console.WriteLine("Die 1: " + die1.CurrentValue);
-            Console.WriteLine("Die 2: " + die2.CurrentValue);
-            Console.WriteLine("Die 3: " + die3.CurrentValue);
+            // Displays the individual dice values
+            Console.WriteLine("Individual die rolls:"); 
+            Console.WriteLine("Die 1: " + die1.currentValue);
+            Console.WriteLine("Die 2: " + die2.currentValue);
+            Console.WriteLine("Die 3: " + die3.currentValue);
+            
+            // Displays the total of the three dice
             Console.WriteLine("Total of the three dice rolls: " + total);
             
             return total;
         }
-
     }
 }

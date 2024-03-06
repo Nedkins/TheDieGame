@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DieGame_Assessment_1
+namespace CMP1903_A1_2324
 {
     // Program class
     class Program
